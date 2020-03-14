@@ -1,0 +1,30 @@
+{
+  "name": "bootstrapgulpexercise",
+  "version": "1.0.0",
+  "description": "exercise package",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MicheleTomasiniHFarm/BootstrapGulpExercise.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "gulp"
+  ],
+  "author": "Michele Tomasini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MicheleTomasiniHFarm/BootstrapGulpExercise/issues"
+  },
+  "homepage": "https://github.com/MicheleTomasiniHFarm/BootstrapGulpExercise#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-terser": "^1.2.0"
+  }
+}

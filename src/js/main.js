@@ -1,3 +1,7 @@
-var aiuto='123';
+var aiuto='123ab';
 
-console.log(aiuto)
+document.addEventListener("DOMContentLoaded", function() {
+    //al caricameno del DOM 
+
+    document.getElementById('var_place').innerText= aiuto;
+});

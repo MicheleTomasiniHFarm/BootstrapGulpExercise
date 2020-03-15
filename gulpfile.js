@@ -8,8 +8,8 @@ const rename = require('gulp-rename');
 function css(){
   watch('src/css/*.scss', function (){
     return src('src/css/*.scss')
-    .pipe(sass())
-    .pipe(rename({ extname: '.min.css'}))
+    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(rename({suffix: '.min'}))
     .pipe(dest('dist/css/'));
   })
 }
@@ -31,7 +31,7 @@ function html(){
 
 }
 
-function connect(){
+function createServer(){
   connect.server({
     root: 'dist',
     port: 8001,
@@ -41,15 +41,11 @@ function connect(){
 
 exports.default= parallel(css, js, html)
 
-exports.connect= parallel(connect)
+exports.connection= parallel(createServer)
 
 /*
-function connect
-
 function livereload
+attualmente non attiva
 
-gulp.task('connect', function() {
-  connect.server();
-});
-
+sistemare funzione css attualmente non funziona
 */

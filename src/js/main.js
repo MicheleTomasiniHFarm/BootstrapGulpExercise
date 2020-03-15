@@ -1,4 +1,4 @@
-var aiuto='123ab';
+var aiuto='trentatrè';
 
 document.addEventListener("DOMContentLoaded", function() {
     //al caricameno del DOM 

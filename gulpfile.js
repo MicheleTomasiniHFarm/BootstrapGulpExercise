@@ -10,7 +10,8 @@ function css(){
     return src('src/css/*.scss')
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(rename({suffix: '.min'}))
-    .pipe(dest('dist/css/'));
+    .pipe(dest('dist/css/'))
+    .pipe(connect.reload());
   })
 }
 
@@ -19,16 +20,17 @@ function js(){
     return src('src/js/*.js')
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js'}))
-    .pipe(dest('dist/js/'));
+    .pipe(dest('dist/js/'))
+    .pipe(connect.reload());
   })  
 }
 
-function html(){
+function html(){  //questa sezione non funziona
   watch('src/*.html', function(){
     return src('src/*.html')
-    .pipe(dest('dist/*.html'));
+    .pipe(dest('dist/'))
+    .pipe(connect.reload());
   })
-
 }
 
 function createServer(){
@@ -39,13 +41,7 @@ function createServer(){
   })
 }
 
-exports.default= parallel(css, js, html)
+exports.default= parallel( css, js, html)
 
-exports.connection= parallel(createServer)
+exports.connection= parallel(createServer, css, js, html)
 
-/*
-function livereload
-attualmente non attiva
-
-sistemare funzione css attualmente non funziona
-*/

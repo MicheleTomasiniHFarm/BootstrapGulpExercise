@@ -1,4 +1,4 @@
-var aiuto='trentatrè';
+var aiuto='trentatrè trentini';
 
 document.addEventListener("DOMContentLoaded", function() {
     //al caricameno del DOM 
